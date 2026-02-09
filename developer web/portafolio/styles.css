@@ -1,0 +1,528 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* GENERAL */
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: linear-gradient(135deg,#0f172a,#020617);
+    color: #eaeaea;
+    background:linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7))
+    ,url("img/fondo.png");
+
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden; /* evita scroll horizontal */
+    background-repeat: no-repeat;
+  
+}
+
+
+
+/* ENCABEZADO */
+.encabezado {
+    position: relative;
+    background-color: rgba(51, 51, 51, 0.7);
+    border: 1px solid rgb(0, 102, 26);
+    box-shadow: 10px 10px 20px rgba(45,212,191,0.9);  
+}
+
+.logo-box {
+    margin: 15px;
+    display: flex;
+    align-items: center;     /* centra verticalmente */
+    gap: 10px;               /* espacio entre logo y texto */
+}
+
+.logo-img {
+    height: 70px;            /* logo pequeño */
+    width: auto;
+}
+
+.logo-text {
+    font-family:Impact;
+    font-size: 2rem;
+    font-weight: 300;
+    white-space: nowrap;     /* evita salto de línea */
+}
+
+/* SALUDO */
+/* --- ESTILOS DE LA SECCIÓN HERO --- */
+
+.hero {
+    display: flex;             /* Activa la magia de Flexbox */
+    align-items: center;       /* Centra verticalmente (eje Y) */
+    justify-content: center;   /* Centra horizontalmente (eje X) */
+    gap: 80px;                 /* Espacio entre el texto y la foto */
+    min-height: 100vh;         /* Ocupa toda la altura de la pantalla */
+    padding: 100px 10% 250px 10%;  /* Relleno: Arriba 100px (para el menú), Lados 10% */
+}
+
+/* El contenedor del texto */
+.hero-text {
+    flex: 1;                   /* Ocupa el espacio disponible */
+    max-width: 650px;          /* Que no se estire demasiado */
+    display: flex;
+    flex-direction: column;    /* Pone título arriba, párrafo abajo */
+    justify-content: center;
+}
+
+/* El Título animado */
+.typing {
+    font-size: 3rem;           /* Tamaño grande */
+    color: #fff;
+    
+    /* IMPORTANTE: Quitamos el transform: translateY(-150px) */
+    /* El display y width son necesarios para el efecto máquina de escribir */
+    display: inline-block;     
+    width: 0; 
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 3px solid #2dd4bf; /* Color del cursor (turquesa) */
+    
+    /* Tu animación original */
+    animation: typing 4s steps(40, end) forwards, blink 0.8s infinite;
+}
+
+/* El Párrafo */
+.about-hero {
+    font-size: 24px;
+    line-height: 1.6;
+    color: #d1d5db;
+    margin-top: 20px;          /* Separación del título */
+    
+    /* Tu animación de aparición */
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeUp 1s ease forwards;
+    animation-delay: 4.5s;     /* Espera a que termine el typing */
+}
+
+/* La Imagen */
+.hero-img img {
+    max-width: 100%;
+    width: 380px;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    width: 380px;              /* Tamaño controlado */
+    height: 380px;             /* Cuadrado perfecto para que sea circular */
+    object-fit: cover;
+    border-radius: 50%;        /* Círculo perfecto */
+    border: 3px solid #2dd4bf; /* Borde turquesa para combinar */
+    
+    /* Tus efectos visuales */
+    filter: drop-shadow(0 0 30px rgba(45,212,191,0.4));
+    box-shadow: 0 0 40px rgba(45,212,191,0.3);
+}
+
+/* --- ANIMACIONES --- */
+@keyframes typing { to { width: 100%; } }
+@keyframes blink { 50% { border-color: transparent; } }
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+                    /* --- boton Descargar CV --- */
+.btn-cv {
+    margin-top: 20px;
+    margin-right: 80px;
+    margin-left: 80px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    padding: 14px 22px ;
+    font-size: 16px;
+    font-weight: 700;
+    color: #000;
+    background: linear-gradient(135deg, #2dd4bf, #22c55e);
+    border-radius: 10px;
+    text-decoration: none;
+    box-shadow: 0 10px 30px rgba(45,212,191,0.35);
+    transition: all 0.35s ease;
+    position: relative;
+    overflow: hidden;
+}
+.texto-cv {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+}
+
+/* Glow animado */
+.btn-cv::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        120deg,
+        transparent,
+        rgba(255,255,255,0.5),
+        transparent
+    );
+    transform: translateX(-100%);
+    transition: transform 0.6s ease;
+}
+
+.btn-cv:hover::before {
+    transform: translateX(100%);
+}
+
+/* Hover */
+.btn-cv:hover {
+    transform: translateY(-4px) scale(1.03);
+    box-shadow: 0 15px 45px rgba(45,212,191,0.6);
+}
+
+/* Icono */
+.btn-cv .icon {
+    width: 20px;
+    height: 20px;
+    transition: transform 0.35s ease;
+}
+
+.btn-cv:hover .icon {
+    transform: translateY(3px);
+}
+
+/* Click */
+.btn-cv:active {
+    transform: scale(0.97);
+}
+/* media para Descargar CV */
+@media (max-width: 768px) {
+    .btn-cv {
+        padding: 12px 16px;
+        font-size: 15px;
+    }
+}
+
+
+                /* logo Whatsapp flotante */
+
+.whatsapp-flotante {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    width: 55px;
+    height: 55px;
+    background-color: transparent;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 0px 50px rgba(45,212,191,0.9);
+    z-index: 1000;
+    transition: transform 0.2s ease;
+  }
+  
+  .whatsapp-flotante img {
+    width: 90px;
+    height: 90px;
+  }
+  
+  .whatsapp-flotante:hover {
+    transform: scale(1.1);
+  }
+  
+
+/* ===== CURVA DE APRENDIZAJE ===== */
+
+.curva-box {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    padding: 60px 40px;
+    background-color: #ffffff;
+    box-sizing: border-box;
+}
+
+/* Imagen curva */
+.curva-img {
+    max-width: 900px;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+/* Tarjeta habilidades */
+.box-habilidades {
+    max-width: 360px;
+    width: 100%;
+    background: linear-gradient(180deg, #3b82f6, #2563eb);
+    padding: 28px;
+    border-radius: 16px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+    font-size: 16px;
+    color: #ffffff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.box-habilidades:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 25px 45px rgba(0,0,0,0.35);
+}
+
+/* Título */
+.box-habilidades h3 {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 18px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border-bottom: 2px solid rgba(255,255,255,0.4);
+    padding-bottom: 10px;
+}
+
+/* Lista */
+.lista-habilidades {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.lista-habilidades li {
+    padding: 8px 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.lista-habilidades li::before {
+    content: "✓";
+    font-weight: bold;
+    color: #a7f3d0;
+}
+
+@media (max-width: 900px) {
+    .curva-box {
+        flex-direction: column;
+        padding: 40px 20px;
+    }
+
+    .box-habilidades {
+        max-width: 100%;
+    }
+}
+
+/* ===== Animación scroll Curva aprendizaje===== */
+.reveal {
+    opacity: 0;
+    transform: translateY(60px);
+    transition: opacity 0.9s ease, transform 0.9s ease;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+                /* MEDIA PARA MOVILES*/
+@media (max-width: 768px) {
+
+    /* HEADER */
+    .logo-text {
+        font-size: 1.5rem;
+    }
+
+    .btn {
+        position: static;
+        margin: 15px auto;
+        display: block;
+    }
+
+    /* HERO */
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        gap: 40px;
+        padding: 120px 5% 120px 5%;
+        min-height: auto;
+    }
+
+    .typing {
+        font-size: 2.2rem;
+    }
+
+    .about-hero {
+        font-size: 16px;
+    }
+
+    .hero-img img {
+        width: 240px;
+    }
+
+    /* WHATSAPP */
+    .whatsapp-flotante {
+        bottom: 20px;
+        right: 20px;
+        width: 50px;
+        height: 50px;
+    }
+
+    .whatsapp-flotante img {
+        width: 65px;
+        height: 65px;
+    }
+
+    /* CURVA */
+    .curva-box {
+        padding: 20px;
+    }
+
+    /* HABILIDADES */
+    .box-habilidades {
+        width: 90%;
+        max-width: 100%;
+        height: auto;
+        font-size: 18px;
+    }
+
+    /* WORKS */
+    .cards {
+        grid-template-columns: 1fr;
+    }
+}
+
+                /* MEDIA PARA TABLETS*/
+@media (max-width: 1024px) {
+
+    .hero {
+        gap: 50px;
+        padding: 120px 8%;
+    }
+
+    .typing {
+        font-size: 2.6rem;
+    }
+
+    .hero-img img {
+        width: 300px;
+    }
+
+    .cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+/* ----------------Proyectos---------------*/
+.projects {
+    padding: 80px 10%;
+    background: linear-gradient(180deg, #050b1a, #020617);
+    color: #fff;
+  }
+  
+  .section-title {
+    font-size: 2.2rem;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  
+  .section-subtitle {
+    text-align: center;
+    color: #94a3b8;
+    margin-bottom: 50px;
+  }
+  
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+  }
+  
+  .project-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    padding: 30px;
+    backdrop-filter: blur(8px);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+  }
+  
+  .project-card:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 20px 40px rgba(59, 130, 246, 0.25);
+  }
+  
+  .project-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 12px;
+  }
+  
+  .project-desc {
+    font-size: 0.95rem;
+    color: #cbd5f5;
+    margin-bottom: 20px;
+  }
+  
+  .project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 25px;
+  }
+  
+  .project-tags span {
+    background: rgba(59, 130, 246, 0.15);
+    color: #60a5fa;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+  }
+  
+  .project-btn {
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
+    font-size: 0.85rem;
+    padding: 10px 20px;
+    border-radius: 25px;
+    background: linear-gradient(135deg, #2563eb, #1e40af);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .project-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 25px rgba(37, 99, 235, 0.4);
+  }
+  
+/* PRIMER PROYECTO VENTAS*/
+  .project-thumb {
+    width: 100%;
+    height: 180px;
+    border-radius: 14px;
+    overflow: hidden;
+    margin-bottom: 20px;
+  }
+  
+  .project-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+  
+  /* Zoom suave al hacer hover en la card */
+  .project-card:hover .project-thumb img {
+    transform: scale(1.08);
+  }
+
+  
+  
+/* -----------------QUE NO SE DESBORDE COMPLETO BODY------------------*/
+html, body {
+    width: 100%;
+    overflow-x: hidden;
+}
