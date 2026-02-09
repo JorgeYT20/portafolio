@@ -8,7 +8,7 @@
 ## 🚀 Demo en vivo
 
 Puedes ver el sitio web funcionando aquí:
-👉 **[Ver Portafolio Online](https://jorgeyt20.github.io/mi-portafolio/)**
+👉 **[Ver Portafolio Online](https://jorgeyt20.github.io/portafolio/)**
 
 ---
 
