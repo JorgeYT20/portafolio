@@ -14,7 +14,7 @@
         </div>
     </nav>
 
-    <section class="hero">
+    <section class="hero" id="Inicio">
         <div class="hero-text">
             <h1 class="typing">
                 Hola, soy Jorge Yataco
@@ -52,7 +52,7 @@
 </a>
 
 <!--curva aprendizaje-->
-<section class="curva-box">
+<section class="curva-box" id="skills">
     <img class= "curva-img reveal" src="img/curva.png" alt="Curva Aprendizaje">
     <header class="lista-habilidades">
         <ul class="box-habilidades">
@@ -113,7 +113,7 @@
           <span>Excel</span>
         </div>
   
-        <a href="https://www.notion.so/Bienvenidos-a-Ingenia-Entretenimiento-2429a795b9468095898cdd33a64fc1ec?source=copy_link" class="project-btn">Ver proyecto</a>
+        <a href="ingenia-entretenimiento.html" class="project-btn">Ver proyecto</a>
       </article>
         <!--Articulo 2-->
       <article class="project-card">
@@ -132,7 +132,7 @@
           <span>SQL</span>
         </div>
   
-        <a href="https://www.notion.so/Sistema-de-Transporte-y-Servicios-de-Vacunaci-n-Biovac-2429a795b946814a802eed611ba179b8?source=copy_link" class="project-btn">Ver Proyecto</a>
+        <a href="biovac.html" class="project-btn">Ver Proyecto</a>
       </article>
         <!--Articulo 3-->
       <article class="project-card">
@@ -150,17 +150,130 @@
           <span>Power BI</span>
         </div>
   
-        <a href="https://www.notion.so/Sistema-financiero-Digital-APP-M-vil-ANDROID-2429a795b9468140820ff25b9ded5e77?source=copy_link" class="project-btn">Ver código</a>
+        <a href="sistema-financiero-app.html" class="project-btn">Ver código</a>
       </article>
   
     </div>
 </section>
   
+<!-- SECCIÓN CONTACTO - formulario -->
+<section class="contact-section" id="contacto">
+  <div class="contact-container">
 
-<!--pie de pagina-->
-<footer>
-    © 2026 – Portafolio Profesional
+      <div class="contact-info">
+          <h2>Contáctame</h2>
+          <p>
+              ¿Tienes un proyecto, una propuesta laboral o necesitas apoyo
+              en análisis de datos, dashboards o desarrollo web?
+              <br><br>
+              Completa el formulario y me pondré en contacto contigo.
+          </p>
+
+          <ul>
+              <li> Análisis de Datos & BI</li>
+              <li> Dashboards en Power BI</li>
+              <li> Desarrollo Web</li>
+              <li> Automatización & Excel avanzado</li>
+          </ul>
+      </div>
+
+      <form class="contact-form" id="contactForm">
+          <div class="form-group">
+              <input type="text" id="nombre" required>
+              <label>Nombre completo</label>
+          </div>
+
+          <div class="form-group">
+              <input type="email" id="email" required>
+              <label>Correo electrónico</label>
+          </div>
+
+          <div class="form-group">
+              <input type="text" id="asunto" required>
+              <label>Asunto</label>
+          </div>
+
+          <div class="form-group">
+              <textarea id="mensaje" rows="4" required></textarea>
+              <label>Mensaje</label>
+          </div>
+
+          <button type="submit" class="contact-btn">
+              Enviar mensaje
+          </button>
+
+          <p class="form-status" id="formStatus"></p>
+      </form>
+
+  </div>
+</section>
+<script>
+  document.getElementById("contactForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+  
+      const status = document.getElementById("formStatus");
+      status.textContent = "Mensaje enviado correctamente ✔️";
+      status.style.color = "#22c55e";
+  
+      this.reset();
+  
+      setTimeout(() => {
+          status.textContent = "";
+      }, 4000);
+  });
+</script>
+  
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-container">
+
+      <!-- BRAND -->
+      <div class="footer-brand">
+          <div class="footer-logo">JY</div>
+          <h3>Jorge Yataco</h3>
+          <p>
+              Web Developer & Business Intelligence Specialist.
+              Transformo datos y tecnología en soluciones claras,
+              escalables y orientadas a resultados.
+          </p>
+      </div>
+
+      <!-- LINKS -->
+      <div class="footer-links">
+          <h4>Navegación</h4>
+          <ul>
+              <li><a href="#Inicio">Inicio</a></li>
+              <li><a href="#projects">Proyectos</a></li>
+              <li><a href="#skills">Habilidades</a></li>
+              <li><a href="#contacto">Contacto</a></li>
+          </ul>
+      </div>
+
+      <!-- CONTACTO -->
+      <div class="footer-contact">
+          <h4>Contacto</h4>
+          <ul>
+              <li> jorgeyataco.dev@gmail.com</li>
+              <li> Lima, Perú</li>
+              <li> Disponible para proyectos y oportunidades</li>
+          </ul>
+      </div>
+
+      <!-- CTA -->
+      <div class="footer-cta">
+          <h4>¿Trabajamos juntos?</h4>
+          <p>
+              Estoy abierto a propuestas laborales,
+              proyectos freelance y colaboraciones.
+          </p>
+          <a href="#contacto" class="footer-btn">Contáctame</a>
+      </div>
+
+  </div>
+
+  <!-- BOTTOM -->
+  <div class="footer-bottom">
+      <p>© 2026 Jorge Yataco. Todos los derechos reservados.</p>
+      <p>Diseñado y desarrollado por mí.</p>
+  </div>
 </footer>
-
-</body>
-</html>
