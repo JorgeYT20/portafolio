@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background-color: #0b0f14;
+    color: #e6e6e6;
+    line-height: 1.7;
+}
+
+/* BOTÓN VOLVER */
+.back-btn {
+    position: fixed;
+    top: 25px;
+    left: 25px;
+    padding: 10px 18px;
+    background: #111827;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 30px;
+    border: 1px solid #2563eb;
+    transition: 0.3s ease;
+    z-index: 999;
+}
+
+.back-btn:hover {
+    background: #2563eb;
+    box-shadow: 0 10px 25px rgba(37, 99, 235, 0.5);
+}
+
+/* HERO */
+.hero {
+    padding: 90px 20px;
+    background: linear-gradient(180deg, #020617, #0b0f14);
+}
+
+.hero-content {
+    max-width: 1100px;
+    margin: auto;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 2.8rem;
+    color: #60a5fa;
+}
+
+.hero-subtitle {
+    margin: 25px 0 35px;
+    color: #cbd5f5;
+}
+
+.hero-tags {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 40px;
+}
+
+.hero-tags span {
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    border: 1px solid #2563eb;
+}
+
+.hero-img {
+    width: 100%;
+    max-width: 850px;
+    border-radius: 18px;
+    box-shadow: 0 0 30px rgba(37, 99, 235, 0.3);
+}
+
+/* CONTENIDO */
+.project-detail {
+    padding: 90px 20px;
+}
+
+.project-wrapper {
+    max-width: 1100px;
+    margin: auto;
+}
+
+.project-wrapper h2 {
+    color: #60a5fa;
+    margin-bottom: 25px;
+    font-size: 2.2rem;
+}
+
+.project-block {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    margin: 70px 0;
+    flex-wrap: wrap;
+}
+
+.project-block.reverse {
+    flex-direction: row-reverse;
+}
+
+.project-text {
+    flex: 1;
+}
+
+.project-text h3 {
+    color: #93c5fd;
+    margin-bottom: 15px;
+}
+
+.project-text ul {
+    margin-left: 20px;
+    margin-top: 15px;
+}
+
+.project-block img {
+    flex: 1;
+    max-width: 520px;
+    border-radius: 16px;
+    box-shadow: 0 0 25px rgba(0,0,0,0.7);
+}
+
+.project-closing {
+    margin-top: 70px;
+    padding: 30px;
+    background: #020617;
+    border-left: 4px solid #2563eb;
+    border-radius: 12px;
+}

@@ -1,0 +1,155 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    background-color: #0e0e0e;
+    color: #ffffff;
+    line-height: 1.7;
+}
+
+/* HERO */
+.hero {
+    padding: 80px 20px;
+    background: url(img-proyecto1/fondo.png)
+}
+
+.hero-content {
+    max-width: 1100px;
+    margin: auto;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 3.1rem;
+    color: #ffffff;
+    text-shadow: 5px 8px 10px #000000;
+}
+
+.hero-subtitle {
+    background: linear-gradient(180deg, #ffffff, #ffffff);
+    margin: 20px 0 30px;
+    color: #000000;
+    font-size: 1.5rem;
+    border-radius: 10px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    padding: 10px 10px;
+}
+
+.hero-tags {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 40px;
+}
+
+.hero-tags span {
+    border: 1px solid #fbff00;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+}
+
+.hero-img {
+    width: 100%;
+    max-width: 800px;
+    margin-top: 30px;
+    border-radius: 16px;
+    box-shadow: 0 0 25px rgba(229, 9, 20, 0.3);
+}
+
+/* DETALLE */
+.project-detail {
+    padding: 80px 20px;
+}
+
+.project-wrapper {
+    max-width: 1100px;
+    margin: auto;
+}
+
+.project-wrapper h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #00ff6a;
+}
+
+.project-block {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    margin: 60px 0;
+    flex-wrap: wrap;
+}
+
+.project-block.reverse {
+    flex-direction: row-reverse;
+}
+
+.project-text {
+    flex: 1;
+}
+
+.project-text h3 {
+    color: #006b2d;
+    margin-bottom: 15px;
+}
+
+.project-text ul {
+    margin: 15px 0 15px 20px;
+}
+
+.project-block img {
+    flex: 1;
+    max-width: 500px;
+    border-radius: 14px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.6);
+}
+
+.project-closing {
+    margin-top: 60px;
+    padding: 30px;
+    background: #ffffff;
+    border-left: 4px solid #e50914;
+    border-radius: 10px;
+    box-shadow: 10px 10px 10px rgb(6, 112, 2);
+}
+
+.project-closing p {
+    color: #000000;
+
+}
+
+/* boton volver al portafolio */
+
+.back-btn {
+    position: fixed;
+    top: 25px;
+    left: 25px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 18px;
+    background: rgba(20, 20, 20, 0.9);
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 0.9rem;
+    border-radius: 30px;
+    border: 1px solid #e50914;
+    backdrop-filter: blur(6px);
+    transition: all 0.3s ease;
+    z-index: 999;
+}
+
+.back-btn:hover {
+    background: #e50914;
+    color: #ffffff;
+    transform: translateX(-4px);
+    box-shadow: 0 8px 20px rgba(229, 9, 20, 0.5);
+}
+
+
