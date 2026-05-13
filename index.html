@@ -21,6 +21,7 @@
                 <a href="#SobreMi" class="nav-link">Sobre mí</a>
                 <a href="#skills" class="nav-link">Habilidades</a>
                 <a href="#projects" class="nav-link">Proyectos</a>
+                <a href="#certificaciones" class="nav-link">Certificaciones</a>
                 <a href="#opiniones" class="nav-link">Opiniones</a>
                 <a href="#contacto" class="nav-btn-contact">Contactar</a>
             </div>
@@ -491,6 +492,39 @@
             </div>
 </section>
         </section>
+
+        <!-- SECCIÓN CERTIFICACIONES -->
+        <section class="certifications-section" id="certificaciones">
+            <div class="certifications-container reveal">
+                <div class="section-header">
+                    <h2 class="certifications-title">Mis <span class="cyan-text">Certificaciones</span></h2>
+                    <p class="certifications-subtitle">Respaldos académicos y de formación profesional</p>
+                    <div class="title-underline"></div>
+                </div>
+
+                <div class="certifications-grid" id="certifications-grid">
+                    <!-- Tarjetas generadas dinámicamente desde JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- MODAL CERTIFICACIONES -->
+        <div class="cert-modal" id="cert-modal">
+            <button class="cert-modal-close" id="cert-modal-close">&times;</button>
+            <div class="cert-modal-content">
+                <div class="cert-modal-header">
+                    <h3 id="cert-modal-title">Título del Certificado</h3>
+                    <p id="cert-modal-institution">Institución</p>
+                </div>
+                <div class="cert-modal-body">
+                    <button class="cert-nav-btn prev" id="cert-nav-prev" style="display: none;" aria-label="Anterior">&#10094;</button>
+                    <div class="cert-image-container">
+                        <img src="" alt="Certificado" id="cert-modal-img">
+                    </div>
+                    <button class="cert-nav-btn next" id="cert-nav-next" style="display: none;" aria-label="Siguiente">&#10095;</button>
+                </div>
+            </div>
+        </div>
   
         <!-- SECCIÓN CONTACTO - formulario -->
         <section class="contact-section" id="contacto">

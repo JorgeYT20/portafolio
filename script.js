@@ -128,3 +128,144 @@ filterButtons.forEach(button => {
         });
     });
 });
+
+// --- LÓGICA DE CERTIFICACIONES ---
+// Estructura de datos para facilitar la asignación de 1 o 2 imágenes
+const certificatesData = [
+    {
+        id: 1,
+        title: "Modelamiento de datos SQL server",
+        institution: "IDAT",
+        // Ejemplo de 2 imágenes (frente y reverso)
+        images: ["img-certificados/cert-idat-1.png", "img-certificados/cert-idat-2.png"] 
+    },
+    {
+        id: 2,
+        title: "Bases de datos",
+        institution: "UNIVERSIDAD NACIONAL DE INGENIERIA",
+        // Ejemplo de 1 imagen
+        images: ["img-certificados/cert-uni-1.png", "img-certificados/cert-uni-2.png"]
+    },
+    {
+        id: 3,
+        title: "Diseño UI/UX Avanzado",
+        institution: "Coderhouse",
+        images: ["img/fondo.png"]
+    },
+    {
+        id: 4,
+        title: "Bases de Datos SQL Server",
+        institution: "Oracle Academy",
+        // Ejemplo de 2 imágenes (frente y reverso)
+        images: ["img/fondo.png", "img/fondo.png"] 
+    },
+    {
+        id: 5,
+        title: "Gestión de Proyectos Ágiles",
+        institution: "Scrum Alliance",
+        images: ["img/fondo.png"]
+    }
+];
+
+document.addEventListener("DOMContentLoaded", () => {
+    const certGrid = document.getElementById("certifications-grid");
+    const certModal = document.getElementById("cert-modal");
+    const certModalImg = document.getElementById("cert-modal-img");
+    const certModalTitle = document.getElementById("cert-modal-title");
+    const certModalInst = document.getElementById("cert-modal-institution");
+    const certCloseBtn = document.getElementById("cert-modal-close");
+    const btnPrev = document.getElementById("cert-nav-prev");
+    const btnNext = document.getElementById("cert-nav-next");
+
+    let currentCertIndex = null;
+    let currentImageIndex = 0;
+
+    // Renderizar tarjetas
+    if (certGrid) {
+        certificatesData.forEach((cert, index) => {
+            const hasMultiple = cert.images.length > 1;
+            
+            const card = document.createElement("div");
+            card.className = "cert-card";
+            card.innerHTML = `
+                <div class="cert-thumb">
+                    <img src="${cert.images[0]}" alt="${cert.title}" loading="lazy">
+                    ${hasMultiple ? '<div class="cert-badge">📄 2 Páginas</div>' : ''}
+                    <div class="cert-overlay">
+                        <span class="cert-view-btn">Ver Certificado</span>
+                    </div>
+                </div>
+                <div class="cert-info">
+                    <h4>${cert.title}</h4>
+                    <p>${cert.institution}</p>
+                </div>
+            `;
+            
+            card.addEventListener("click", () => openModal(index));
+            certGrid.appendChild(card);
+        });
+    }
+
+    function openModal(index) {
+        currentCertIndex = index;
+        currentImageIndex = 0;
+        updateModalContent();
+        certModal.classList.add("active");
+        document.body.style.overflow = "hidden"; // Prevenir scroll de fondo
+    }
+
+    function closeModal() {
+        certModal.classList.remove("active");
+        document.body.style.overflow = "";
+        
+        // Retrasar reseteo para que la animación termine
+        setTimeout(() => {
+            certModalImg.src = "";
+        }, 300);
+    }
+
+    function updateModalContent() {
+        const cert = certificatesData[currentCertIndex];
+        certModalTitle.textContent = cert.title;
+        certModalInst.textContent = cert.institution;
+        certModalImg.src = cert.images[currentImageIndex];
+
+        if (cert.images.length > 1) {
+            btnPrev.style.display = "flex";
+            btnNext.style.display = "flex";
+        } else {
+            btnPrev.style.display = "none";
+            btnNext.style.display = "none";
+        }
+    }
+
+    // Eventos de Modal
+    if (certCloseBtn) {
+        certCloseBtn.addEventListener("click", closeModal);
+    }
+
+    if (certModal) {
+        certModal.addEventListener("click", (e) => {
+            if (e.target === certModal) closeModal();
+        });
+    }
+
+    // Navegación de múltiples imágenes
+    if (btnPrev) {
+        btnPrev.addEventListener("click", (e) => {
+            e.stopPropagation(); // Evitar cerrar modal
+            const cert = certificatesData[currentCertIndex];
+            currentImageIndex = (currentImageIndex - 1 + cert.images.length) % cert.images.length;
+            certModalImg.src = cert.images[currentImageIndex];
+        });
+    }
+
+    if (btnNext) {
+        btnNext.addEventListener("click", (e) => {
+            e.stopPropagation(); // Evitar cerrar modal
+            const cert = certificatesData[currentCertIndex];
+            currentImageIndex = (currentImageIndex + 1) % cert.images.length;
+            certModalImg.src = cert.images[currentImageIndex];
+        });
+    }
+});
