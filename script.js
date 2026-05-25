@@ -148,16 +148,16 @@ const certificatesData = [
     },
     {
         id: 3,
-        title: "Diseño UI/UX Avanzado",
-        institution: "Coderhouse",
-        images: ["img/fondo.png"]
+        title: "Especialización Python",
+        institution: "Netzun",
+        images: ["img-certificados/cert-netzun.png"]
     },
     {
         id: 4,
-        title: "Bases de Datos SQL Server",
-        institution: "Oracle Academy",
+        title: "Microsoft Excel",
+        institution: "Coursera",
         // Ejemplo de 2 imágenes (frente y reverso)
-        images: ["img/fondo.png", "img/fondo.png"] 
+        images: ["img-certificados/cert-coursera.png"]
     },
     {
         id: 5,
